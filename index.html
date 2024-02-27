@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Password Generator</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<h1>SecurePass</h1>
+		<nav id="menuBar">
+			<ul class="opciones">
+				<li class="opcionNav"><a href="#validacion">Validar</a></li>
+				<li class="opcionNav"><a href="#generador">Generar</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section id="validacion">
+			<h2>Vamos a verificar la seguridad de tu contraseña.</h2>
+			<form id="verificarPassword">
+				<label for="inPassword">Introduzca su contraseña:</label>
+				<input type="text" name="inPassword" id="inPassword" placeholder="..." required>
+				<label for="evaluacionPassword">Resultado:</label>
+				<output name="evaluacionPassword" id="evaluacionPassword"></output>
+				<button type="submit" name="checkPassword">Validar</button>
+			</form>
+		</section>
+		<section id="generador">
+			<h2>Crearemos una nueva contraseña para ti.</h2>
+			<form id="crearPassword">
+				<output name="newPassword"></output>
+				<label for="passwordLength">Longitud:</label>
+				<input type="range" name="passwordLength" id="passwordLength">
+				<button type="submit" name="createPassword">Crear</button>
+			</form>
+		</section>
+	</main>
+</body>
+</html>

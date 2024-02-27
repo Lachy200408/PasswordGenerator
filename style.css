@@ -1,0 +1,186 @@
+*{
+	--color-letra: #d3d3d4;
+	
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	min-width: 0;
+	font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+	font-size: 24px;
+	color: var(--color-letra);
+	overflow: hidden;
+}
+
+h1{
+	font-size: 2em;
+}
+
+h2{
+	font-size: 1.6em;
+	text-wrap: balance;
+}
+
+h1, h2, label{
+	text-align: center;
+	pointer-events: none;
+	user-select: none;
+}
+
+html, body{
+	height: 100vh;
+}
+
+body{
+	background-image: linear-gradient(to bottom, #36466dae , #26314e 100%);
+}
+
+body header{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: sticky;
+	top: 0;
+	height: 64px;
+	width: 100vw;
+	padding-left: 16px;
+	box-shadow: 0 8px 16px -2px #0004;
+}
+
+body header h1, h2{
+	text-shadow: 0px 2px 4px #0004;
+}
+
+#menuBar{
+	align-self: stretch;
+	width: 40%;
+}
+
+.opciones{
+	display: flex;
+	align-items: center;
+	justify-content: space-evenly;
+
+	height: 100%;
+}
+
+.opciones li{
+	height: 70%;
+	display: grid;
+	place-items: end;
+}
+
+.opciones li a:hover{
+	color: white;
+}
+
+a, a:link, a:visited{
+	font-size: 1.3em;
+	text-decoration: none;
+}
+
+main{
+	height: calc(100vh - 64px);
+	scroll-behavior: smooth;
+}
+
+main section{
+	width: 70%;
+	height: 100%;
+	margin-inline: auto;
+	padding-block: 128px 64px;
+
+	display: grid;
+	place-items: center;
+	grid-template-columns: 1fr;
+	grid-template-rows: max-content 1fr;
+}
+
+form{
+	width: min(100vw , 600px);
+	height: min(60vh , 400px);
+	padding: 32px;
+	background-color: #f9f9f9;
+	border-radius: 16px;
+	border: 1px solid #0008;
+	box-shadow: 0 0 16px #0004;
+}
+
+form *:nth-child(n+2){
+	margin-top: 16px;
+}
+
+form label{
+	display: block;
+	width: max-content;
+	margin-inline: auto;
+	box-shadow: 0 20px 0px -18px #26314e;
+}
+
+label,input,output,button{
+	color: #26314e;
+	font-size: 1.4em;
+	outline: none;
+	border: none;
+	text-decoration: none;
+	background-color: transparent;
+	text-overflow: ellipsis;
+}
+
+#verificarPassword input, output{
+	display: block;
+	margin-inline: auto;
+	padding-inline: 8px;
+	width: 70%;
+	border-radius: 8px;
+	border: 2px solid #26314e;
+}
+
+#verificarPassword output{
+	height: 3em;
+}
+
+button{
+	display: block;
+	margin-inline: auto;
+	width: max-content;
+	padding-inline: 8px;
+	box-shadow: -8px 0 0 -6px #26314e;
+	transition: box-shadow .35s ease 0s, background-color .25s ease-out 0s;
+}
+
+button:hover{
+	box-shadow: -2px 0 0 #26314e, inset 16px 0 8px -8px #26314e5f, inset 12px 0 8px -8px #26314e90;
+}
+
+button:active{
+	animation: pulse .25s ease-in-out 0s 1 normal backwards;
+}
+
+@keyframes pulse {
+	0%{
+		background-color: transparent;
+	}
+	80%{
+		background-color: #26314e4f;
+	}
+	100%{
+		background-color: transparent;
+	}
+}
+
+#crearPassword{
+	display: grid;
+	place-items: center;
+}
+
+#crearPassword output{
+	height: 1.2em;
+	padding: 0 8px;
+}
+
+#crearPassword input{
+	display: block;
+	width: 70%;
+	margin-inline: auto;
+	accent-color: #26314e;
+}
