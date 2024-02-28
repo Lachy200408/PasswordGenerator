@@ -84,10 +84,10 @@ main{
 }
 
 main section{
-	width: 70%;
+	width: min(700px , 100vw);
 	height: 100%;
 	margin-inline: auto;
-	padding-block: 128px 64px;
+	padding-block: 5vh;
 
 	display: grid;
 	place-items: center;
@@ -98,7 +98,8 @@ main section{
 form{
 	width: min(100vw , 600px);
 	height: min(60vh , 400px);
-	padding: 32px;
+	padding-block: 32px;
+	padding-inline: min(2vw , 32px);
 	background-color: #f9f9f9;
 	border-radius: 16px;
 	border: 1px solid #0008;
@@ -136,8 +137,36 @@ label,input,output,button{
 }
 
 #verificarPassword output{
-	height: 3em;
+	min-height: 3em;
+	height: max-content;
+	padding-block: 4px;
 }
+
+output p{
+	font-size: .5em;
+	font-weight: 700;
+	line-height: 1.2em;
+	margin-block: 4px !important;
+}
+
+.bien{
+	color: #292;
+}
+
+.bien::before{
+	content: "+";
+	display: inline-block;
+}
+
+.mal{
+	color: #922;
+}
+
+.mal::before{
+	content: "×";
+	display: inline-block;
+}
+
 
 button{
 	display: block;
@@ -171,16 +200,104 @@ button:active{
 #crearPassword{
 	display: grid;
 	place-items: center;
+	grid-template-columns: max-content 1fr;
 }
 
 #crearPassword output{
-	height: 1.2em;
-	padding: 0 8px;
+	min-height: 1.6em;
+	height: fit-content;
+	padding: 8px;
+	grid-column: 1/3;
 }
 
 #crearPassword input{
 	display: block;
-	width: 70%;
+	width: 80%;
 	margin-inline: auto;
 	accent-color: #26314e;
+}
+
+#crearPassword button{
+	grid-column: 1/3;
+}
+
+@media only screen and (max-width:580px){
+	*{
+		font-size: 20px;
+	}
+	form label{
+		box-shadow: 0 20px 0px -15px #26314e;
+	}
+	body header{
+		position: fixed;
+		top: 0;
+		height: 64px;
+		overflow: visible;
+		background-color: #76819b;
+	}
+	main{
+		height: 100vh;
+	}
+	main section{
+		padding-top: 96px;
+	}
+	#menuBar{
+		position: absolute;
+		top: 0;
+		right: 0;
+		display: block;
+		width: 64px;
+		height: 64px;
+		overflow: visible;
+		background: url("./Menu_32px.png") no-repeat;
+		background-size: 40px;
+		background-position: center;
+	}
+	#menuBar:hover .opciones{
+		max-height: max-content;
+		padding-block: 8px;
+	}
+	.opciones{
+		position: absolute;
+		top: 64px;
+		left: calc(-100vw + 64px);
+		width: 100vw;
+		height: max-content;
+		max-height: 0;
+		background-color: #f9f9f9;
+		box-shadow: 0 8px 16px -2px #0004, inset 0 8px 16px -4px #0004;
+		align-items: stretch;
+		justify-content: stretch;
+		flex-direction: column;
+		gap: 8px;
+		transition: all .3s ease-in 0s;
+		-webkit-transition: all .3s ease-in 0s;
+		-moz-transition: all .3s ease-in 0s;
+		-ms-transition: all .3s ease-in 0s;
+		-o-transition: all .3s ease-in 0s;
+	}
+	.opciones li a{
+		color: #36466d;
+	}
+	.opciones li a:hover{
+		color: #26314e;
+	}
+	button:hover{
+		box-shadow: -8px 0 0 -6px #26314e;
+	}
+	button:active{
+		animation: normal sombra .2s ease-in 0s;
+		-webkit-animation: normal sombra .2s ease-in 0s;
+}
+	@keyframes sombra {
+		0%{
+			box-shadow: -8px 0 0 -6px #26314e;
+		}
+		50%{
+			box-shadow: -2px 0 0 #26314e, inset 16px 0 8px -8px #26314e5f, inset 12px 0 8px -8px #26314e90;
+		}
+		100%{
+			box-shadow: -8px 0 0 -6px #26314e;
+		}
+	}
 }

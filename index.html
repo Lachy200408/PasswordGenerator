@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Password Generator</title>
 	<link rel="stylesheet" href="style.css">
+	<script src="index.js"></script>
 </head>
 <body>
 	<header>
@@ -32,7 +33,7 @@
 			<form id="crearPassword">
 				<output name="newPassword"></output>
 				<label for="passwordLength">Longitud:</label>
-				<input type="range" name="passwordLength" id="passwordLength">
+				<input type="range" name="passwordLength" id="passwordLength" min="8" max="15">
 				<button type="submit" name="createPassword">Crear</button>
 			</form>
 		</section>
